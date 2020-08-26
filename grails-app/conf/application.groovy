@@ -38,3 +38,71 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 
 //grails.plugin.springsecurity.successHandler.alwaysUseDefault = true
 //grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/admin'
+
+
+dataSource {
+	pooled = false
+	driverClassName = "com.mysql.cj.jdbc.Driver"
+	dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
+	jmxExport = true
+//	username = "developer"
+//	password = "java11"
+}
+
+environments {
+	jdbc:
+	mysql:
+	development {
+		server.contextPath = "/hilo"
+		rootPath = ""
+		server.port = 8098
+		grails.serverURL = "http://localhost:${server.port}"
+		grails.plugin.springsecurity.ui.register.emailFrom = 'elintegro@localhost'
+		dataSource {
+			logSql = true
+//			dbCreate = 'create-drop' //"update" // one of 'create', 'create-drop','update'
+			dbCreate = 'update' //"update" // one of 'create', 'create-drop','update'
+			url = "jdbc:mysql://localhost:3308/elintegro_ecommerce_db_dev"
+//			username = "root"
+//			password = "qbohfoj"
+			username = "developer"
+			password = "java11"
+		}
+	}
+	production {
+		server.contextPath = "/"
+		rootPath = ""
+		grails.serverURL = ""
+		grails.plugin.springsecurity.ui.register.emailFrom='elintegro.himalaya'
+		dataSource {
+			logSql = true
+//			dbCreate = 'create-drop' //"update" // one of 'create', 'create-drop','update'
+			dbCreate = 'update' //"update" // one of 'create', 'create-drop','update'
+			url = "jdbc:mysql://localhost:3306/elintegro_website_db_dev?useUnicode=true&characterEncoding=UTF-8"
+			username = "developer"
+			password = "java1177"
+
+			logSql = true
+
+			properties {
+				jmxEnabled = true
+				initialSize = 5
+				maxActive = 50
+				minIdle = 5
+				maxIdle = 25
+				maxWait = 10000
+				maxAge = 10 * 60000
+				timeBetweenEvictionRunsMillis = 5000
+				minEvictableIdleTimeMillis = 60000
+				validationQuery = "SELECT 1"
+				validationQueryTimeout = 3
+				validationInterval = 15000
+				testOnBorrow = true
+				testWhileIdle = true
+				testOnReturn = false
+				jdbcInterceptors = "ConnectionState"
+				defaultTransactionIsolation = java.sql.Connection.TRANSACTION_READ_COMMITTED
+			}
+		}
+	}
+}

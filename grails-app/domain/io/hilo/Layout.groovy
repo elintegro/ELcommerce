@@ -20,6 +20,8 @@ class Layout {
 	
 	static mapping = {
 		content type: "text"
+		css type: "text"
+		javascript type: "text"
 	}
 	
 	static constraints = {
