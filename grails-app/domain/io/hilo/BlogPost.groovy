@@ -16,6 +16,10 @@ class BlogPost {
 	Date dateCreated
 	Date lastUpdated
 
+	static mapping = {
+		content type: "text"
+	}
+
     static constraints = {
 		uuid(nullable:true)
 		title(unique:true, nullable:false)

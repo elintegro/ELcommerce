@@ -22,7 +22,10 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/**/css/**',      access: ['permitAll']],
 	[pattern: '/**/images/**',   access: ['permitAll']],
 	[pattern: '/**/fonts/**',    access: ['permitAll']],
-	[pattern: '/**/favicon.ico', access: ['permitAll']]
+	[pattern: '/**/favicon.ico', access: ['permitAll']],
+	[pattern: '/elintegro_ELcommerce/userDetailsFromElintegro', access: ['permitAll']],
+	[pattern: '/elintegro_ELcommerce/authenticateWithToken', access: ['permitAll']]
+
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [
@@ -60,8 +63,8 @@ environments {
 		grails.plugin.springsecurity.ui.register.emailFrom = 'elintegro@localhost'
 		dataSource {
 			logSql = true
-//			dbCreate = 'create-drop' //"update" // one of 'create', 'create-drop','update'
-			dbCreate = 'update' //"update" // one of 'create', 'create-drop','update'
+			dbCreate = 'create-drop' //"update" // one of 'create', 'create-drop','update'
+//			dbCreate = 'update' //"update" // one of 'create', 'create-drop','update'
 			url = "jdbc:mysql://localhost:3308/elintegro_ecommerce_db_dev"
 //			username = "root"
 //			password = "qbohfoj"

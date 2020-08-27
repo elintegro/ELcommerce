@@ -15,7 +15,7 @@ span, p, table, td, th{
 
 .secondary{
 	color : rgba(0,0,0,0.54);
-	text-decoration:uppercase;
+	text-transform:uppercase;
 }
 
 .hint{
@@ -1015,6 +1015,6 @@ input[type="password"]:not(:placeholder-shown){
     -moz-box-shadow: 0px 1px 7px 0px rgba(179,179,179,0.53) !important;
     box-shadow: 0px 1px 7px 0px rgba(179,179,179,0.53) !important;
     **/
-}
-**/
+
+
 
