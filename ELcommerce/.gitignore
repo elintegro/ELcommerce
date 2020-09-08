@@ -3,7 +3,6 @@ CHANGELOG.md
 .gradle
 .classpath
 .project
-.settings
 .launch
 .tmproj
 .idea
@@ -22,6 +21,6 @@ stacktrace.log
 *.war
 
 # project settings
-*settings.properties
+
 
 src/main/webapp/backup/hilo-backup.json
